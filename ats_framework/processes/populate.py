@@ -34,7 +34,7 @@ def build_items(candidates: dict, today: str, dry_run: bool) -> list[dict]:
     kandidater = candidates.get("kandidater") or []
     uden_dato = candidates.get("udenAfsluttetDato") or []
 
-    if dry_run:
+    if dry_run and len(kandidater + uden_dato) > 0:
         return [
             {
                 "reference": f"dryrun_{today}",
