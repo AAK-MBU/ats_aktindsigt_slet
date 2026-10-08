@@ -12,13 +12,13 @@ PROCESS_NAME = "ats_aktindsigt_slet"
 
 # Med DRY_RUN sletter processen intet. Populate lægger ét rapport-item i køen,
 # og behandlingen af det mailer listen over de sager, der ville blive slettet.
-DRY_RUN = True
+DRY_RUN = False
 
 # Aktindsigt-portalens backend. Endpointene under /api/sletning lægges til.
-AKTINDSIGT_BASE_URL = "UDFYLDES_aktindsigt_base_url"
+AKTINDSIGT_BASE_URL = "https://mbu-aktindsigt.adm.aarhuskommune.dk"
 # Credential i rpa.Credentials, hvis password er portalens slette-API-nøgle
 # (sendes i headeren X-API-Key og valideres mod SLETNING_API_KEYS i portalen).
-AKTINDSIGT_CREDENTIAL = "UDFYLDES_aktindsigt_slet_credential"
+AKTINDSIGT_CREDENTIAL = "aktindsigt_sletning_api_key"
 
 # Timeout i sekunder pr. kald til portalen. En sletning fjerner både
 # databaserækker og sagens dokumentmappe og kan derfor tage tid.
@@ -27,7 +27,7 @@ REQUEST_TIMEOUT = 300
 # ----------------------
 # Rapport-mails (navne på konstanter i rpa.Constants)
 # ----------------------
-RECIPIENTS_CONSTANT = "rpa_team_email"  # JSON-liste eller kommasepareret
+RECIPIENTS_CONSTANT = "E-mail"  # JSON-liste eller kommasepareret
 SENDER_CONSTANT = "e-mail_noreply"
 SMTP_SERVER_CONSTANT = "smtp_adm_server"
 SMTP_PORT_CONSTANT = "smtp_port"
