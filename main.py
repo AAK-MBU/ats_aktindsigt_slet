@@ -135,7 +135,7 @@ async def finalize(workqueue: Workqueue):
 
 if __name__ == "__main__":
     ats_functions.init_logger()
-    load_dotenv()
+    load_dotenv(override=True)
     config.apply_ca_bundle()
 
     ats = AutomationServer.from_environment()
