@@ -12,7 +12,7 @@ PROCESS_NAME = "ats_aktindsigt_slet"
 
 # Med DRY_RUN sletter processen intet. Populate lægger ét rapport-item i køen,
 # og behandlingen af det mailer listen over de sager, der ville blive slettet.
-DRY_RUN = False
+DRY_RUN = True
 
 # Aktindsigt-portalens backend. Endpointene under /api/sletning lægges til.
 AKTINDSIGT_BASE_URL = "https://mbu-aktindsigt.adm.aarhuskommune.dk"
