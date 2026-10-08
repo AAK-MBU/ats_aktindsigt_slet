@@ -92,6 +92,8 @@ def handle_dry_run(data: dict) -> str:
                 for k in kandidater
             ],
         )
+        + "<p>Kør sletning manuelt mod aktindsigts backend: DELETE /api/sager/{sag-id} </p>"
+        "<p>Sæt robotten til at slette manuelt ved at ændre DRY_RUN=False i slet_config.py (repo: ats_aktindsigt_slet)<p>"
     )
     if uden_dato:
         html += _uden_dato_html(uden_dato)
